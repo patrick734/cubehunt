@@ -1,0 +1,17 @@
+node_modules
+.next
+out
+*.tsbuildinfo
+next-env.d.ts
+.env
+.env.local
+.vercel
+launch.env
+verify-files/
+contracts/artifacts
+contracts/cache
+contracts/deployments/fork.json
+contracts/deployments/hardhat.json
+contracts/deployments/localhost.json
+keeper/.state/
+.DS_Store

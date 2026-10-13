@@ -1,0 +1,12 @@
+{
+  "name": "@cubehunt/keeper",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node src/test.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": { "ethers": "^6.13.0" }
+}

@@ -1,0 +1,47 @@
+# Runs the CubeHunt buy-and-burn keeper once an hour (it burns at most once per on-chain minInterval).
+# Repo settings (Settings > Secrets and variables > Actions):
+#   secret   KEEPER_PRIVATE_KEY   set by: node tools/wallet.js keeper-secret
+#   secret   ROBINHOOD_RPC_URL    optional private RPC
+#   variable KEEPER_LIVE          0 = dry run (quote and log only), 1 = send burns
+name: Keeper
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: keeper
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Skip until CubeHunt is deployed
+        id: deployed
+        run: |
+          if [ -f contracts/deployments/robinhood.json ]; then echo "yes=1" >> "$GITHUB_OUTPUT"; else echo "No contracts/deployments/robinhood.json yet: nothing to do."; fi
+      - uses: actions/setup-node@v4
+        if: steps.deployed.outputs.yes == '1'
+        with:
+          node-version: 22
+      - name: Install keeper
+        if: steps.deployed.outputs.yes == '1'
+        working-directory: keeper
+        run: npm ci --no-audit --no-fund
+      - name: Run keeper
+        if: steps.deployed.outputs.yes == '1'
+        working-directory: keeper
+        env:
+          KEEPER_PRIVATE_KEY: ${{ secrets.KEEPER_PRIVATE_KEY }}
+          ROBINHOOD_RPC_URL: ${{ secrets.ROBINHOOD_RPC_URL }}
+          KEEPER_LIVE: ${{ vars.KEEPER_LIVE }}
+        run: node src/index.js

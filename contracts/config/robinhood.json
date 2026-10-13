@@ -1,0 +1,28 @@
+{
+  "network": { "chainId": 4663, "explorer": "https://robinhoodchain.blockscout.com" },
+  "brand": { "name": "CubeHunt", "token": "$CUBE", "site": "cubehunt.fun" },
+  "uniswap": {
+    "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+    "ethUsdgPool": { "fee": 100, "tickSpacing": 1 }
+  },
+  "pons": { "hook": "0xE5e702641Ea86F4ae6cC3cDaeD2B886f976Be044", "poolFee": 0, "poolTickSpacing": 200 },
+  "tokens": { "usdg": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168" },
+  "chainlink": { "ethUsdFeed": null },
+  "governance": {
+    "timelockDelaySeconds": 172800,
+    "votingDelaySeconds": 600,
+    "votingPeriodSeconds": 172800,
+    "proposalThreshold": 1000,
+    "guardianTermDays": 30
+  },
+  "fees": { "shareFeeEth": "0.00001", "depositFeeBps": 300 },
+  "vaults": { "proofReviewWindowSeconds": 259200 },
+  "buyBurn": { "maxEthPerRun": "0.05", "maxUsdgPerRun": 200, "minIntervalSeconds": 3600 },
+  "hunt": {
+    "about": "The seven k below 1000 with no known x^3 + y^3 + z^3 = k (public record as of October 2026). Published searches stop at |z| near 10^19; CubeHunt opens the band 10^20 <= |z| < 10^21.",
+    "targets": [114, 390, 627, 633, 732, 921, 975],
+    "zMin": "100000000000000000000",
+    "zMax": "1000000000000000000000",
+    "firstSeason": { "bits": 14, "pointsPerShare": 100 }
+  }
+}
