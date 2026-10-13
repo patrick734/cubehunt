@@ -114,8 +114,7 @@ export function MinerPanel() {
       <TxStatus message={tx.busy ? tx.message : tx.message} error={tx.error} />
       <p className="fine">
         Each accepted share earns {String(h.stats?.pointsPerShare ?? "…")} points (votes in the CubeHunt DAO; they can&apos;t be sold or sent) and pays a {formatEther(fee)} ETH fee that
-        buys and burns $CUBE. Duplicates are skipped for free. Mining uses your CPU; close the tab to stop. Points are not money and a solution may
-        never be found.
+        buys and burns $CUBE. Duplicates are skipped for free. Mining uses your CPU; close the tab to stop.
       </p>
       {m.solution && <SolutionPanel found={m.solution} />}
     </div>

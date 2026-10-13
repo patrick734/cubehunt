@@ -42,7 +42,7 @@ export default function VaultsPage() {
           <h1>Fund the hunt</h1>
           <p className="muted">
             Each target has a prize vault. Only the hunt contract can pay a HUNT vault, and only to whoever submits an answer the chain itself verifies.
-            Deposits are gifts: there is no refund and no team withdrawal. A small fee on each deposit buys and burns $CUBE; the rest goes in the vault and
+            There is no team withdrawal. A small fee on each deposit buys and burns $CUBE; the rest goes in the vault and
             earns you points (votes).
           </p>
         </div>
@@ -112,7 +112,7 @@ function VaultCard({ v }: { v: VaultView }) {
             </button>
           </div>
           <p className="fine">
-            {(bps / 100).toFixed(2)}% buys and burns $CUBE. {asset === "USDG" && wei ? `About ${Math.floor(Number(formatUnits((wei * BigInt(10_000 - bps)) / 10_000n, 6)) * Number(ppu ?? 0n)).toLocaleString()} points.` : "ETH earns points only if the DAO has an ETH price feed."} No refunds.
+            {(bps / 100).toFixed(2)}% buys and burns $CUBE. {asset === "USDG" && wei ? `About ${Math.floor(Number(formatUnits((wei * BigInt(10_000 - bps)) / 10_000n, 6)) * Number(ppu ?? 0n)).toLocaleString()} points.` : "ETH earns points only if the DAO has an ETH price feed."}
           </p>
           <TxStatus message={tx.message} error={tx.error} />
         </>
