@@ -1,0 +1,110 @@
+{
+  "network": "robinhood",
+  "chainId": 4663,
+  "deployer": "0x51700721Ef4b39Cff4bffFb9F03c6F8bE5fa3861",
+  "guardian": "0x51700721Ef4b39Cff4bffFb9F03c6F8bE5fa3861",
+  "guardianUntil": 1794466976,
+  "keeper": "0xAe5996F42E52caea525225F49D300c016062A2c0",
+  "usdg": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+  "cube": null,
+  "timelock": "0x790E91fB7c2aBAcB427c0A6DC8C0e67c40B526f0",
+  "points": "0x0482540d7Fd5df1E4bFC07966A76CceB3037F01e",
+  "governor": "0xD5ffD07ED01f0dD064AEBcF2A17c319f345063E0",
+  "buyBurn": "0x6B5DA9C35b4a4c29aEb7B66Ab0592A342980Da0f",
+  "vaults": "0xC471f803355904CFEa9De605498dfBe94B1266c7",
+  "hunt": "0x01cd039494Be1dcD8211870371C31F18c18cb0bD",
+  "targets": {
+    "114": 1,
+    "390": 2,
+    "627": 3,
+    "633": 4,
+    "732": 5,
+    "921": 6,
+    "975": 7
+  },
+  "deployBlock": 87323206,
+  "sources": [
+    {
+      "contract": "CubeTimelock",
+      "address": "0x790E91fB7c2aBAcB427c0A6DC8C0e67c40B526f0",
+      "args": [
+        172800,
+        [],
+        [
+          "0x0000000000000000000000000000000000000000"
+        ],
+        "0x51700721Ef4b39Cff4bffFb9F03c6F8bE5fa3861"
+      ]
+    },
+    {
+      "contract": "CubePoints",
+      "address": "0x0482540d7Fd5df1E4bFC07966A76CceB3037F01e",
+      "args": [
+        "0x51700721Ef4b39Cff4bffFb9F03c6F8bE5fa3861",
+        "0x790E91fB7c2aBAcB427c0A6DC8C0e67c40B526f0",
+        1794466976
+      ]
+    },
+    {
+      "contract": "CubeGovernor",
+      "address": "0xD5ffD07ED01f0dD064AEBcF2A17c319f345063E0",
+      "args": [
+        "0x0482540d7Fd5df1E4bFC07966A76CceB3037F01e",
+        "0x790E91fB7c2aBAcB427c0A6DC8C0e67c40B526f0",
+        600,
+        172800,
+        1000
+      ]
+    },
+    {
+      "contract": "CubeBuyBurn",
+      "address": "0x6B5DA9C35b4a4c29aEb7B66Ab0592A342980Da0f",
+      "args": [
+        {
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "ponsHook": "0xE5e702641Ea86F4ae6cC3cDaeD2B886f976Be044",
+          "poolFee": 0,
+          "tickSpacing": 200,
+          "usdg": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+          "usdgPoolFee": 100,
+          "usdgTickSpacing": 1
+        },
+        "0x790E91fB7c2aBAcB427c0A6DC8C0e67c40B526f0",
+        "0x51700721Ef4b39Cff4bffFb9F03c6F8bE5fa3861",
+        "0xAe5996F42E52caea525225F49D300c016062A2c0",
+        "50000000000000000",
+        "200000000",
+        3600,
+        "0x51700721Ef4b39Cff4bffFb9F03c6F8bE5fa3861"
+      ]
+    },
+    {
+      "contract": "CubeVaults",
+      "address": "0xC471f803355904CFEa9De605498dfBe94B1266c7",
+      "args": [
+        "0x51700721Ef4b39Cff4bffFb9F03c6F8bE5fa3861",
+        "0x790E91fB7c2aBAcB427c0A6DC8C0e67c40B526f0",
+        1794466976,
+        "0x0482540d7Fd5df1E4bFC07966A76CceB3037F01e",
+        259200,
+        "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+        "0x0000000000000000000000000000000000000000",
+        "0x6B5DA9C35b4a4c29aEb7B66Ab0592A342980Da0f",
+        300
+      ]
+    },
+    {
+      "contract": "CubeHunt",
+      "address": "0x01cd039494Be1dcD8211870371C31F18c18cb0bD",
+      "args": [
+        "0x51700721Ef4b39Cff4bffFb9F03c6F8bE5fa3861",
+        "0x790E91fB7c2aBAcB427c0A6DC8C0e67c40B526f0",
+        1794466976,
+        "0x0482540d7Fd5df1E4bFC07966A76CceB3037F01e",
+        "0xC471f803355904CFEa9De605498dfBe94B1266c7",
+        "0x6B5DA9C35b4a4c29aEb7B66Ab0592A342980Da0f",
+        "10000000000000"
+      ]
+    }
+  ]
+}
