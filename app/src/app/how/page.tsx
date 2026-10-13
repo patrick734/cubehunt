@@ -51,15 +51,6 @@ export default function HowPage() {
         </p>
       </section>
 
-      <section className="card notice">
-        <h2>Honest risks</h2>
-        <ul>
-          <li>No solution may ever be found. The band is new ground, but the expected number of solutions in it is small and unknown.</li>
-          <li>Points are not money. Vault deposits are gifts with no refund.</li>
-          <li>$CUBE is a new, small token and can lose all its value.</li>
-          <li>The contracts are reviewed and tested but not externally audited. The hunt and vault logic is based on Ponmath&apos;s MIT-licensed contracts.</li>
-        </ul>
-      </section>
     </div>
   );
 }

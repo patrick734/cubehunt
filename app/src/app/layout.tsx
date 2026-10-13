@@ -31,7 +31,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <main>{children}</main>
           <footer className="footer">
             <div className="stack-xs">
-              <span>CubeHunt. Independent software on Robinhood Chain; not affiliated with Robinhood. Hunt and vault contracts based on Ponmath (MIT).</span>
               <TokenCA />
             </div>
             <span className="num">x³ + y³ + z³ = k · checked on chain · 48h DAO timelock</span>
